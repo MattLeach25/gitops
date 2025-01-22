@@ -2,5 +2,6 @@
 bases:
 - ../base
 namespace: prod
-patchesStrategicMerge:
-- deployment.yaml
+replicas:
+- name: store-front
+  count: 2
