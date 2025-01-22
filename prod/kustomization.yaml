@@ -3,5 +3,3 @@ bases:
 - ../base
 patchesStrategicMerge:
 - deployment.yaml
-metadata:
-  namespace: prod
