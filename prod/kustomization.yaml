@@ -1,5 +1,4 @@
 # kustomization.yaml
 bases:
 - ../base
-patchesStrategicMerge:
-- deployment.yaml
+namespace: prod
