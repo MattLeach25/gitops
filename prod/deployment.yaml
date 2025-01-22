@@ -3,4 +3,11 @@ kind: Deployment
 metadata:
   name: store-front
 spec:
-  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: store-front
+          resources:
+            requests:
+              cpu: 2m
+              memory: 400Mi
