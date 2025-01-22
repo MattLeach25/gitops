@@ -2,3 +2,5 @@
 bases:
 - ../base
 namespace: prod
+patchesStrategicMerge:
+- deployment.yaml
