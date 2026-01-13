@@ -1,7 +1,0 @@
-# kustomization.yaml
-bases:
-- ../base
-namespace: prod
-replicas:
-- name: store-front
-  count: 2
