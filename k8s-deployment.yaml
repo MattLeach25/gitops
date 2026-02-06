@@ -10,7 +10,7 @@ kind: Deployment
 metadata:
   name: razorpagesmovie
 spec:
-  replicas: 16
+  replicas: 1
   selector:
     matchLabels:
       app: razorpagesmovie
@@ -59,6 +59,7 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
+
 
 
 
