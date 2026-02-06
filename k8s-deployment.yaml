@@ -37,16 +37,8 @@ spec:
           value: "Server=tcp:mltestsql6.database.windows.net,1433;Initial Catalog=RazorPagesMovieDB;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
         - name: AZURE_CLIENT_ID
           value: "765e4a7d-e264-4aed-91d9-8b72835e04e5"
-      affinity:
-        nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            preference:
-              matchExpressions:
-              - key: kubernetes.azure.com/scalesetpriority
-                operator: In
-                values:
-                - spot
+      nodeSelector:
+        kubernetes.azure.com/scalesetpriority: spot
 ---
 apiVersion: v1
 kind: Service
@@ -59,6 +51,7 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
+
 
 
 
