@@ -20,13 +20,14 @@ spec:
         app: razorpagesmovie
         azure.workload.identity/use: "true"
     spec:
-      limits:
-        cpu: 1
-        memory: 1000Mi
       serviceAccountName: razorpagesmovie-sa
       containers:
       - name: razorpagesmovie
         image: mltestacr6.azurecr.io/razorpagesmovie:latest
+        resources:
+          requests:
+            cpu: 500m
+            memory: 256Mi
         ports:
         - containerPort: 8080
         env:
@@ -58,6 +59,7 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
+
 
 
 
